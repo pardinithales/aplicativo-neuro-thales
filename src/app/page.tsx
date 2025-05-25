@@ -9,11 +9,11 @@ export default function HomePage() {
         <div className="flex items-center justify-center mb-4">
           <Brain className="h-10 w-10 text-primary-600 mr-3" />
           <h1 className="text-3xl font-bold text-gray-900">
-            Neurologia de Bolso
+            Neuronus
           </h1>
         </div>
         <p className="text-lg text-gray-600 max-w-md mx-auto">
-          Conteúdo neurológico prático e direto ao ponto, sempre no seu bolso
+          Neurologia sem complicação no seu bolso
         </p>
       </header>
 

@@ -9,8 +9,9 @@ interface PageProps {
   }
 }
 
-export default function ChapterPage({ params }: PageProps) {
-  const chapter = mockChapters.find(c => c.id === params.id)
+export default async function ChapterPage({ params }: PageProps) {
+  const { id } = await params
+  const chapter = mockChapters.find(c => c.id === id)
   
   if (!chapter) {
     notFound()

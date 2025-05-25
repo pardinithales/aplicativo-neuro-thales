@@ -69,6 +69,99 @@ Pontuação máxima: 30 pontos
     `,
     duration: 7,
     order: 2,
+  },
+  {
+    id: '3',
+    title: 'Nervos Cranianos',
+    content: `
+# Nervos Cranianos
+
+Avaliação sistemática dos 12 pares de nervos cranianos.
+
+## I - Olfatório
+- **Função**: Olfato
+- **Teste**: Substâncias aromáticas (café, menta)
+- **Alterações**: Anosmia, hiposmia
+
+## II - Óptico
+- **Função**: Visão
+- **Testes**: 
+  - Acuidade visual
+  - Campos visuais
+  - Fundo de olho
+- **Alterações**: Amaurose, hemianopsia
+
+## III - Oculomotor
+- **Função**: Movimentos oculares, pupila, pálpebra
+- **Testes**:
+  - Movimentos extraoculares
+  - Reflexo pupilar
+  - Ptose palpebral
+- **Alterações**: Diplopia, midríase, ptose
+
+## IV - Troclear
+- **Função**: Músculo oblíquo superior
+- **Teste**: Olhar para baixo e medial
+- **Alterações**: Diplopia vertical
+
+## V - Trigêmeo
+- **Função**: Sensibilidade facial, mastigação
+- **Testes**:
+  - Sensibilidade tátil, dolorosa, térmica
+  - Força dos músculos mastigatórios
+  - Reflexo córneo-palpebral
+- **Alterações**: Neuralgia, anestesia facial
+
+## VI - Abducente
+- **Função**: Músculo reto lateral
+- **Teste**: Abdução ocular
+- **Alterações**: Diplopia horizontal
+
+## VII - Facial
+- **Função**: Mímica facial, gustação, lacrimejamento
+- **Testes**:
+  - Movimentos faciais simétricos
+  - Gustação (2/3 anteriores da língua)
+- **Alterações**: Paralisia facial, ageusia
+
+## VIII - Vestibulococlear
+- **Função**: Audição e equilíbrio
+- **Testes**:
+  - Acuidade auditiva
+  - Weber e Rinne
+  - Nistagmo
+- **Alterações**: Surdez, vertigem, nistagmo
+
+## IX - Glossofaríngeo
+- **Função**: Gustação, deglutição, reflexo do vômito
+- **Testes**:
+  - Reflexo do vômito
+  - Gustação (1/3 posterior da língua)
+- **Alterações**: Disfagia, ageusia
+
+## X - Vago
+- **Função**: Fonação, deglutição, funções viscerais
+- **Testes**:
+  - Fonação ("ah")
+  - Elevação do palato
+- **Alterações**: Disfonia, disfagia
+
+## XI - Acessório
+- **Função**: Músculos trapézio e esternocleidomastóideo
+- **Testes**:
+  - Elevação dos ombros
+  - Rotação da cabeça
+- **Alterações**: Fraqueza cervical
+
+## XII - Hipoglosso
+- **Função**: Movimentos da língua
+- **Testes**:
+  - Protrusão da língua
+  - Movimentos laterais
+- **Alterações**: Atrofia, fasciculações, desvio
+    `,
+    duration: 12,
+    order: 3,
   }
 ]
 
@@ -78,7 +171,7 @@ export const mockChapters: Chapter[] = [
     title: 'Semiologia Neurológica',
     description: 'Exame neurológico completo e sistematizado',
     difficulty: 'Básico',
-    estimatedDuration: 40,
+    estimatedDuration: 60,
     topics: mockTopics,
     order: 1,
     isUnlocked: true,
