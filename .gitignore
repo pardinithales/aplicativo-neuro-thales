@@ -1,0 +1,36 @@
+# Arquivos de ambiente
+.env
+.env.local
+.env.production
+
+# Dependências
+node_modules/
+flutter/.packages
+flutter/.flutter-plugins
+flutter/.flutter-plugins-dependencies
+
+# Arquivos de build
+build/
+dist/
+*.apk
+*.ipa
+
+# Arquivos temporários
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+*.cache 
