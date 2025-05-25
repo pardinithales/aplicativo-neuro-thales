@@ -1,71 +1,95 @@
 import Link from 'next/link'
-import { Brain, Users, FileText, BarChart3, Shield, Stethoscope } from 'lucide-react'
+import { Brain, BookOpen, Clock, Users, Star, Play } from 'lucide-react'
 
 export default function HomePage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Header */}
-      <header className="text-center mb-12">
+      <header className="text-center pt-8 pb-6 px-4">
         <div className="flex items-center justify-center mb-4">
-          <Brain className="h-12 w-12 text-primary-600 mr-3" />
-          <h1 className="text-4xl font-bold text-gray-900">
-            Aplicativo de Neurologia
+          <Brain className="h-10 w-10 text-primary-600 mr-3" />
+          <h1 className="text-3xl font-bold text-gray-900">
+            Neurologia de Bolso
           </h1>
         </div>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Uma plataforma moderna para auxiliar profissionais de neurologia no 
-          diagnóstico e acompanhamento de pacientes
+        <p className="text-lg text-gray-600 max-w-md mx-auto">
+          Conteúdo neurológico prático e direto ao ponto, sempre no seu bolso
         </p>
       </header>
 
-      {/* Features Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-        <FeatureCard
-          icon={<Users className="h-8 w-8" />}
-          title="Gestão de Pacientes"
-          description="Cadastre e gerencie informações completas dos seus pacientes de forma organizada e segura."
-        />
-        <FeatureCard
-          icon={<FileText className="h-8 w-8" />}
-          title="Histórico Médico"
-          description="Mantenha um registro detalhado do histórico médico e evolução de cada paciente."
-        />
-        <FeatureCard
-          icon={<Stethoscope className="h-8 w-8" />}
-          title="Ferramentas de Diagnóstico"
-          description="Acesse ferramentas especializadas para auxiliar no diagnóstico neurológico."
-        />
-        <FeatureCard
-          icon={<BarChart3 className="h-8 w-8" />}
-          title="Relatórios e Estatísticas"
-          description="Gere relatórios detalhados e visualize estatísticas dos seus atendimentos."
-        />
-        <FeatureCard
-          icon={<Shield className="h-8 w-8" />}
-          title="Segurança de Dados"
-          description="Seus dados e dos pacientes são protegidos com criptografia de ponta."
-        />
-        <FeatureCard
-          icon={<Brain className="h-8 w-8" />}
-          title="Interface Intuitiva"
-          description="Design moderno e intuitivo, desenvolvido especificamente para profissionais da saúde."
-        />
+      {/* Stats Cards */}
+      <div className="px-4 mb-8">
+        <div className="grid grid-cols-3 gap-3">
+          <StatCard icon={<BookOpen className="h-5 w-5" />} number="12" label="Capítulos" />
+          <StatCard icon={<Clock className="h-5 w-5" />} number="5min" label="Por tópico" />
+          <StatCard icon={<Users className="h-5 w-5" />} number="1.2k" label="Estudantes" />
+        </div>
+      </div>
+
+      {/* Featured Chapters */}
+      <div className="px-4 mb-8">
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">Capítulos em Destaque</h2>
+        <div className="space-y-3">
+          <ChapterCard
+            title="Semiologia Neurológica"
+            description="Exame neurológico completo e sistematizado"
+            topics={8}
+            duration="40min"
+            difficulty="Básico"
+            href="/capitulos/semiologia"
+          />
+          <ChapterCard
+            title="Cefaleia e Enxaqueca"
+            description="Diagnóstico diferencial e tratamento"
+            topics={6}
+            duration="30min"
+            difficulty="Intermediário"
+            href="/capitulos/cefaleia"
+          />
+          <ChapterCard
+            title="AVC e Emergências"
+            description="Reconhecimento e manejo inicial"
+            topics={10}
+            duration="50min"
+            difficulty="Avançado"
+            href="/capitulos/avc"
+          />
+        </div>
+      </div>
+
+      {/* Quick Access */}
+      <div className="px-4 mb-8">
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">Acesso Rápido</h2>
+        <div className="grid grid-cols-2 gap-3">
+          <QuickAccessCard
+            icon={<Star className="h-6 w-6" />}
+            title="Favoritos"
+            subtitle="Seus tópicos salvos"
+            href="/favoritos"
+          />
+          <QuickAccessCard
+            icon={<Play className="h-6 w-6" />}
+            title="Continuar"
+            subtitle="Onde você parou"
+            href="/continuar"
+          />
+        </div>
       </div>
 
       {/* CTA Section */}
-      <div className="text-center">
-        <div className="card max-w-md mx-auto">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            Comece agora
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Faça login ou crie sua conta para começar a usar o aplicativo.
+      <div className="px-4 pb-8">
+        <div className="card text-center">
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            Comece sua jornada
+          </h3>
+          <p className="text-gray-600 mb-4 text-sm">
+            Faça login para acessar todo o conteúdo e acompanhar seu progresso
           </p>
-          <div className="space-y-3">
-            <Link href="/auth/login" className="btn-primary w-full block text-center">
-              Fazer Login
+          <div className="space-y-2">
+            <Link href="/auth/login" className="btn-primary w-full block text-center text-sm">
+              Entrar
             </Link>
-            <Link href="/auth/register" className="btn-secondary w-full block text-center">
+            <Link href="/auth/register" className="btn-secondary w-full block text-center text-sm">
               Criar Conta
             </Link>
           </div>
@@ -75,26 +99,86 @@ export default function HomePage() {
   )
 }
 
-function FeatureCard({ 
+function StatCard({ 
+  icon, 
+  number, 
+  label 
+}: { 
+  icon: React.ReactNode
+  number: string
+  label: string 
+}) {
+  return (
+    <div className="bg-white rounded-lg p-3 text-center shadow-sm border border-gray-200">
+      <div className="text-primary-600 mb-1 flex justify-center">
+        {icon}
+      </div>
+      <div className="text-lg font-bold text-gray-900">{number}</div>
+      <div className="text-xs text-gray-600">{label}</div>
+    </div>
+  )
+}
+
+function ChapterCard({ 
+  title, 
+  description, 
+  topics, 
+  duration, 
+  difficulty,
+  href 
+}: { 
+  title: string
+  description: string
+  topics: number
+  duration: string
+  difficulty: string
+  href: string
+}) {
+  const difficultyColor = {
+    'Básico': 'bg-green-100 text-green-800',
+    'Intermediário': 'bg-yellow-100 text-yellow-800',
+    'Avançado': 'bg-red-100 text-red-800'
+  }[difficulty] || 'bg-gray-100 text-gray-800'
+
+  return (
+    <Link href={href} className="block">
+      <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="font-semibold text-gray-900 text-sm">{title}</h3>
+          <span className={`px-2 py-1 rounded-full text-xs font-medium ${difficultyColor}`}>
+            {difficulty}
+          </span>
+        </div>
+        <p className="text-gray-600 text-xs mb-3">{description}</p>
+        <div className="flex justify-between text-xs text-gray-500">
+          <span>{topics} tópicos</span>
+          <span>{duration}</span>
+        </div>
+      </div>
+    </Link>
+  )
+}
+
+function QuickAccessCard({ 
   icon, 
   title, 
-  description 
+  subtitle,
+  href 
 }: { 
   icon: React.ReactNode
   title: string
-  description: string 
+  subtitle: string
+  href: string
 }) {
   return (
-    <div className="card hover:shadow-lg transition-shadow duration-200">
-      <div className="text-primary-600 mb-4">
-        {icon}
+    <Link href={href} className="block">
+      <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200 hover:shadow-md transition-shadow text-center">
+        <div className="text-primary-600 mb-2 flex justify-center">
+          {icon}
+        </div>
+        <h3 className="font-semibold text-gray-900 text-sm">{title}</h3>
+        <p className="text-gray-600 text-xs">{subtitle}</p>
       </div>
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">
-        {title}
-      </h3>
-      <p className="text-gray-600">
-        {description}
-      </p>
-    </div>
+    </Link>
   )
 } 

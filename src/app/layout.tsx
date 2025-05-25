@@ -5,11 +5,15 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'BrainIN',
-  description: 'Neurologia no seu bolso',
-  keywords: ['neurologia', 'medicina', 'diagnóstico', 'pacientes', 'saúde'],
+  title: 'Neuronus',
+  description: 'Neurologia sem complicação no seu bolso.',
+  keywords: ['neurologia', 'medicina', 'educação', 'mobile', 'bolso', 'estudo'],
   authors: [{ name: 'Thales Pardini' }],
-  viewport: 'width=device-width, initial-scale=1',
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
